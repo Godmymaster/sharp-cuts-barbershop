@@ -4,330 +4,569 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sharp Cuts | Barber Shop</title>
-  
-<style>
-  * {
-    box-sizing: border-box;
-  }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  <title>Sharp Cuts Barbershop | Fresh Cuts, Sharp Style</title>
+  <meta name="description" content="Get a fresh haircut and a clean finish at Sharp Cuts Barbershop in Accra, Ghana. Explore our services and book on WhatsApp.">
+  <meta name="theme-color" content="#111111">
 
-  body {
-    margin: 0;
-    background: #202020;
-    color: #f5f5f5;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-  }
+  <style>
+    :root {
+      --gold: #d8b34d;
+      --gold-light: #f2d783;
+      --black: #101010;
+      --surface: #191919;
+      --card: #202020;
+      --text: #f5f5f5;
+      --muted: #bcbcbc;
+    }
 
-  header {
-    text-align: center;
-    padding: 30px 20px;
-    background: #080808;
-    border-bottom: 2px solid #c9a227;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  header h1 {
-    color: #c9a227;
-    letter-spacing: 5px;
-    margin-bottom: 0;
-  }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
-  header p {
-    color: #cccccc;
-  }
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
 
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 18px;
-    background: #1c1c1c;
-  }
+    a {
+      transition: 0.25s ease;
+    }
 
-  nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-  }
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
 
-  nav a:hover {
-    color: #c9a227;
-  }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16, 16, 16, 0.96);
+      border-bottom: 1px solid #45391b;
+    }
 
-  section {
-    padding: 60px 20px;
-    text-align: center;
-  }
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-  #home {
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #202020, #080808);
-  }
+    .brand {
+      color: var(--gold);
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
 
-  #home h2 {
-    font-size: 42px;
-    color: #c9a227;
-    margin-bottom: 10px;
-  }
-
-  #home p {
-    color: #dddddd;
-    margin-bottom: 30px;
-  }
-
-  #home a {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #c9a227;
-    color: #111111;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-
-  #home a:hover {
-    background: #f0d36b;
-  }
-
-  #services {
-    background: #181818;
-  }
-
-  #services h2,
-  #contact h2 {
-    color: #c9a227;
-    font-size: 30px;
-  }
-
-  #services p {
-    max-width: 400px;
-    margin: 12px auto;
-    padding: 15px;
-    background: #252525;
-    border-radius: 6px;
-  }
-
-  footer {
-    padding: 20px;
-    text-align: center;
-    background: #080808;
-    color: #aaaaaa;
-    border-top: 1px solid #c9a227;
-  }
-
-  @media (max-width: 500px) {
     nav {
-      gap: 16px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
     }
 
-    #home h2 {
-      font-size: 32px;
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
     }
-  }
-  
-.booking-button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 14px 25px;
-  background: #25D366;
-  color: #111111;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: transform 0.2s, background 0.2s;
-}
 
-.booking-button:hover {
-  background: #49e383;
-  transform: translateY(-3px);
-}
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--gold);
+    }
 
-.hero-image {
-  display: block;
-  width: 100%;
-  max-width: 850px;
-  height: 350px;
-  object-fit: cover;
-  margin: 0 auto 30px;
-  border-radius: 12px;
-  border: 2px solid #c9a227;
-}
+    .nav-book {
+      border: 1px solid var(--gold);
+      padding: 9px 15px;
+      border-radius: 5px;
+    }
 
-@media (max-width: 600px) {
-  .hero-image {
-    height: 220px;
-  }
-}
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.94) 0%,
+          rgba(0, 0, 0, 0.76) 48%,
+          rgba(0, 0, 0, 0.28) 100%
+        ),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85")
+        center 45% / cover no-repeat;
+    }
 
-.service-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-}
+    .hero-content {
+      max-width: 700px;
+      padding: 85px 0;
+    }
 
-.service-card {
-  flex: 1 1 220px;
-  max-width: 300px;
-  padding: 25px;
-  background: #252525;
-  border: 1px solid #51431b;
-  border-radius: 10px;
-  transition: transform 0.2s, border-color 0.2s;
-}
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  border-color: #c9a227;
-}
+    .hero h1 {
+      font-size: clamp(42px, 6.5vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
 
-.service-card h3 {
-  color: #c9a227;
-}
+    .hero h1 span {
+      color: var(--gold);
+    }
 
-.service-card strong {
-  display: block;
-  margin-top: 15px;
-  font-size: 22px;
-  color: #c9a227;
-}
+    .hero-description {
+      max-width: 510px;
+      color: #dedede;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
 
-.business-info {
-  margin: 35px auto 0;
-  max-width: 500px;
-  padding: 20px;
-  background: #1c1c1c;
-  border: 1px solid #51431b;
-  border-radius: 10px;
-}
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 23px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-.business-info h3 {
-  color: #c9a227;
-  margin-bottom: 8px;
-}
+    .button-gold {
+      background: var(--gold);
+      color: #111;
+    }
 
-.business-info p {
-  color: #dddddd;
-  margin: 8px 0;
-}
+    .button-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
 
-@media (max-width: 500px) {
-  nav {
-    gap: 12px;
-    padding: 15px 8px;
-    flex-wrap: wrap;
-  }
+    .button-outline {
+      border: 1px solid #888;
+      color: white;
+      margin-left: 10px;
+    }
 
-  nav a {
-    font-size: 14px;
-  }
+    .button-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
 
-  section {
-    padding: 40px 15px;
-  }
+    .trust-strip {
+      border-top: 1px solid #302817;
+      border-bottom: 1px solid #302817;
+      background: #151515;
+      padding: 20px 0;
+    }
 
-  .service-card {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      flex-wrap: wrap;
+      color: #dedede;
+      font-size: 14px;
+      text-align: center;
+    }
 
-  .booking-button {
-    max-width: 100%;
-  }
-}
+    .trust-items span::first-letter {
+      color: var(--gold);
+    }
 
-</style>
+    section.content-section {
+      padding: 85px 0;
+    }
 
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2,
+    .contact-copy h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-heading h2 span,
+    .contact-copy h2 span {
+      color: var(--gold);
+    }
+
+    .section-heading > p:last-child {
+      color: var(--muted);
+    }
+
+    #services {
+      background: var(--surface);
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 25px;
+      background: var(--card);
+      border: 1px solid #383127;
+      border-radius: 10px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      flex: 1;
+    }
+
+    .price {
+      display: block;
+      color: var(--gold);
+      font-size: 27px;
+      font-weight: bold;
+      margin-top: 23px;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .contact-section {
+      background:
+        radial-gradient(ellipse at top right, #302718 0%, transparent 45%),
+        var(--black);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-copy > p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .business-info {
+      padding: 27px;
+      background: #1b1b1b;
+      border: 1px solid #44371c;
+      border-radius: 10px;
+    }
+
+    .business-info h3 {
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-size: 19px;
+    }
+
+    .business-info p {
+      color: #dedede;
+      margin: 8px 0;
+    }
+
+    .business-info hr {
+      border: 0;
+      border-top: 1px solid #393939;
+      margin: 20px 0;
+    }
+
+    .whatsapp-button {
+      background: #25d366;
+      color: #07170c;
+    }
+
+    .whatsapp-button:hover {
+      background: #4be582;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid #3e3219;
+      background: #090909;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        padding: 15px 0;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 510px;
+        background-position: 58% center;
+      }
+
+      .hero-content {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 25px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      section.content-section {
+        padding: 60px 0;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand {
+        font-size: 20px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .button {
+        padding: 13px 16px;
+        font-size: 14px;
+      }
+
+      .button-outline {
+        margin-left: 5px;
+      }
+
+      .trust-items {
+        gap: 10px 20px;
+        font-size: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
-<body>
 
+<body>
   <header>
-    <h1>SHARP CUTS</h1>
-    <p>Look sharp. Feel confident.</p>
+    <div class="container navbar">
+      <a class="brand" href="#home">SHARP CUTS.</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-book" href="#contact">Book Now</a>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <main>
-    
-<section id="home">
-  <img
-    class="hero-image"
-    src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80"
-    alt="Professional barber shop interior"
-  >
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow">Your Grooming. Your Standard.</p>
 
-  <h2>Your Style, Our Craft.</h2>
-  <p>Professional cuts. Clean finishes. Confidence in every detail.</p>
-  <a href="#contact">Book Your Cut</a>
-</section>
+        <h1>Look Sharp.<br><span>Feel Confident.</span></h1>
 
-    
-<section id="services">
-  <h2>Our Services</h2>
-  <p>Choose your style and book your next visit.</p>
+        <p class="hero-description">
+          Professional cuts, clean finishes and attention to every detail.
+          Come in for a fresh look and leave with confidence.
+        </p>
 
-  <div class="service-list">
-    <article class="service-card">
-      <h3>Classic Haircut</h3>
-      <p>Clean, sharp and tailored to your style.</p>
-      <strong>GHS 50</strong>
-    </article>
+        <a class="button button-gold" href="#contact">
+          Book Your Cut →
+        </a>
 
-    <article class="service-card">
-      <h3>Beard Trim</h3>
-      <p>Neat shaping for a polished finish.</p>
-      <strong>GHS 25</strong>
-    </article>
+        <a class="button button-outline" href="#services">
+          Explore Services
+        </a>
+      </div>
+    </section>
 
-    <article class="service-card">
-      <h3>Haircut + Beard</h3>
-      <p>The complete grooming experience.</p>
-      <strong>GHS 65</strong>
-    </article>
-  </div>
-</section>
+    <div class="trust-strip">
+      <div class="container trust-items">
+        <span>✦ Sharp Finishes</span>
+        <span>✦ Personal Style</span>
+        <span>✦ Easy WhatsApp Booking</span>
+      </div>
+    </div>
 
+    <section class="content-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What We Do</p>
+          <h2>Fresh Cuts. <span>Clean Style.</span></h2>
+          <p>
+            Choose your service and get ready for your next fresh look.
+          </p>
+        </div>
 
-    
-<section id="contact">
-  <h2>Book Your Appointment</h2>
-  <p>Ready for a fresh cut? Message us on WhatsApp.</p>
+        <div class="service-list">
+          <article class="service-card">
+            <span class="service-number">01 / CLASSIC</span>
+            <h3>Classic Haircut</h3>
+            <p>A clean, sharp cut tailored to your personal style.</p>
+            <strong class="price">GHS 50</strong>
+            <span class="price-note">Per session</span>
+          </article>
 
-  <a
-    class="booking-button"
-    href="https://wa.me/233538926574?text=Hello%20Sharp%20Cuts%2C%20I%20would%20like%20to%20book%20an%20appointment."
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Book on WhatsApp
-  </a>
-  
-<div class="business-info">
-  <h3>Opening Hours</h3>
-  <p>Monday – Saturday: 9:00 AM – 7:00 PM</p>
-  <p>Sunday: Closed</p>
+          <article class="service-card">
+            <span class="service-number">02 / DETAIL</span>
+            <h3>Beard Trim</h3>
+            <p>Neat shaping and careful detailing for a polished finish.</p>
+            <strong class="price">GHS 25</strong>
+            <span class="price-note">Per session</span>
+          </article>
 
-  <h3>Find Us</h3>
-  <p>Accra, Ghana</p>
-</div>
+          <article class="service-card">
+            <span class="service-number">03 / COMPLETE</span>
+            <h3>Haircut + Beard</h3>
+            <p>A complete grooming session for a fresh, finished look.</p>
+            <strong class="price">GHS 65</strong>
+            <span class="price-note">Per session</span>
+          </article>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <section class="content-section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Your Next Fresh Cut</p>
+          <h2>Ready to Look <span>Sharp?</span></h2>
+          <p>
+            Contact us on WhatsApp to ask a question or arrange your next
+            appointment. We'll help you take the next step.
+          </p>
 
+          <a
+            class="button whatsapp-button"
+            href="https://wa.me/233538926574?text=Hello%20Sharp%20Cuts%2C%20I%20would%20like%20to%20book%20an%20appointment"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book on WhatsApp ↗
+          </a>
+        </div>
+
+        <aside class="business-info">
+          <h3>Opening Hours</h3>
+          <p>Monday – Saturday: 9:00 AM – 7:00 PM</p>
+          <p>Sunday: Closed</p>
+
+          <hr>
+
+          <h3>Find Us</h3>
+          <p>Accra, Ghana</p>
+          <p>Contact us for directions and appointment details.</p>
+        </aside>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Sharp Cuts. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2026 Sharp Cuts Barbershop. All rights reserved.</p>
+      <p>Designed with care.</p>
+    </div>
   </footer>
-
 </body>
 </html>
